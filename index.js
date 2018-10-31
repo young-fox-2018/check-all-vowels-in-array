@@ -1,12 +1,14 @@
-    let row = [ [ 'O', 'A', 'I', 'E' ],
+    let testcase = [ [ 'O', 'A', 'I', 'E' ],
                 [ 'I', 'O', 'U', 'I' ],
                 [ 'U', 'U', 'U', 'E' ],
                 [ 'U', 'U', 'U', 'X' ] ]
-
+let arrResult = []
+let arrTemp = []
+let row = []
+let col = []
 function generateBoard(r,c) {
     let vow = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    let row = []
-    let col = []
+    
 
     for (let i = 0; i < r*c+1; i++) {
         if (col.length == c) {
@@ -21,16 +23,17 @@ function generateBoard(r,c) {
             )    
         } 
     }
-    console.log(row);
+    
     
     return row
 }
 
 function checkVow(r,c) {
     let randomBoard = generateBoard(r,c)
+    
+    
     let regex = /[AIUEO]/
-    let arrResult = []
-    let arrTemp = []
+ 
 
 
     for (let i = 0; i < randomBoard.length-1; i++) {
@@ -50,11 +53,27 @@ function checkVow(r,c) {
             }
         }
     }
-    
-    
+    console.log(row);
+    row = []
+    console.log("DATA YANG KETEMU:");
     return arrResult
+    
+    
+    
+}
+
+while (arrResult.length == 0) {
+    
+    console.log(checkVow(4,4));    
 }
 
 
 
-console.log(checkVow(4,4));
+
+
+
+
+
+
+
+
